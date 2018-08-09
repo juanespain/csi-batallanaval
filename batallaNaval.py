@@ -14,22 +14,22 @@ barcos_reglamento = [2]
 def recibir_ataque(coordenada):
     for barco in barcos:
         resultado = absbarco.atacar()
-        if resultado!='a':
+        if resultado!= 'a':
             break
-    todos_hundidos=True
+    todos_hundidos = True
     for barco in barcos:
         if not barco.is_hundido():
-            todos_hundidos=False
+            todos_hundidos = False
     if todos_hundidos:
-        resultado='w'
+        resultado = 'w'
     return resultado
 
 class Barco:
-    def __init__ (self,coordenadas):
+    def __init__(self, coordenadas):
         self.coordenadas_vivas = coordenadas
         self.coordenadas_tocadas = []
 
-    def atacar (self,coordenada):
+    def atacar(self, coordenada):
         if coordenada in self.coordenadas_vivas:
             self.coordenadas_vivas.remove(coordenada)
             self.coordenadas_tocadas.append(coordenada)
