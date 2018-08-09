@@ -1,14 +1,14 @@
 def recibir_ataque(coordenada):
     for barco in barcos:
-        resultado=barco.atacar(coordenada)
-        if resultado!='a':
+        resultado = barco.atacar(coordenada)
+        if resultado != 'a':
             break
-    todos_hundidos=True
+    todos_hundidos = True
     for barco in barcos:
         if not barco.is_hundido():
-            todos_hundidos=False
+            todos_hundidos = False
     if todos_hundidos:
-        resultado='w'
+        resultado = 'w'
     return resultado
 
 def crear_mapa():
