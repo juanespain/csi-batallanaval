@@ -21,8 +21,8 @@ def imprimir_mapa(mapa):
     print("   1  2  3  4  5  6  7  8  9  10")
     print("  ------------------------------")
     for fila in mapa:
-        print(fila+"|",end='')
+        print(fila+"|", end='')
         for elemento in mapa[fila]:
-            print(' '+elemento+' ',end='')
+            print(' '+elemento+' ', end='')
         print("|")
     print("  ------------------------------")
