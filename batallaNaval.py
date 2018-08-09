@@ -33,7 +33,7 @@ class Barco:
         if coordenada in self.coordenadas_vivas:
             self.coordenadas_vivas.remove(coordenada)
             self.coordenadas_tocadas.append(coordenada)
-            if len(self.coordenadas_vivas)==0:
+            if len(self.coordenadas_vivas) == 0:
                 return 'h'
             return 't'
         elif coordenada in self.coordenadas_tocadas:
@@ -69,10 +69,10 @@ por| ahora 10x10 luego variable
 
 def imprimirMapas():
     print("Base")
-    imprimirMapa(mapa_propio);
+    imprimirMapas(mapa_propio);
     print("Enemigo")
-    imprimirMapa(mapa_enemigo)
-def getInitPos(pos,size):
+    imprimirMapas(mapa_enemigo)
+def getInitPos(pos, size):
     initNum =int(pos.split(",")[1])
     initLetra = pos.split(",")[0]
     sentido = pos.split(",")[2]
