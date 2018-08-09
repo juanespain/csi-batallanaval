@@ -1,19 +1,19 @@
-#variables globales
+# variables globales
 from enum import Enum
 
 port = 9950
 ip_local = "192.168.1.22"
-ip_enemiga =""
-mapa_propio  =[]
-mapa_enemigo=[]
-barcos=[]
-##barcos_reglamento = [5,4,3,2,2,1,1]
+ip_enemiga = ""
+mapa_propio = []
+mapa_enemigo = []
+barcos = []
+# barcos_reglamento = [5,4,3,2,2,1,1]
 barcos_reglamento = [2]
 
 
 def recibir_ataque(coordenada):
     for barco in barcos:
-        resultado=barco.atacar()
+        resultado = absbarco.atacar()
         if resultado!='a':
             break
     todos_hundidos=True
@@ -46,8 +46,8 @@ class Barco:
         if len(self.coordenadas_vivas)==0:
             return True
         return False
-        
-            
+
+
 '''
 class Resultado(Enum):
     AVERIDADO = 1
@@ -76,8 +76,8 @@ def getInitPos(pos,size):
     initNum =int(pos.split(",")[1])
     initLetra = pos.split(",")[0]
     sentido = pos.split(",")[2]
-    esVertical = sentido.upper() == 'V'            
-                 
+    esVertical = sentido.upper() == 'V'
+
     lista =[]
     for i in range(size):
         if esVertical:
@@ -85,7 +85,7 @@ def getInitPos(pos,size):
         else:
                  lista += [(initLetra, initNum+i)]
 
-            
+
     print (lista)
     return lista
 def isValidaInitPos(pos):
@@ -104,26 +104,26 @@ def isValidaInitPos(pos):
         print ("nnumero")
         return False
     return True
-    
+
 def setupBarcos():
     print ("Definiendo Barcos")
     i=0
     while  (True):
         print("barco numero " ,i)
-        size = barcos_reglamento[i] 
+        size = barcos_reglamento[i]
         pos  = input("insertar un barco de " + str(size) + ". Ej b,2,h en la posicion b2 horizontal o vertical: ")
         if isValidaInitPos(pos):
             barcos.append(Barco(getInitPos(pos,size)))
             i+=1
             if i >= len(barcos_reglamento):
                 break
-            
-                
-        
-    
+
+
+
+
 '''
  setupbarcos()
-          llenar lista de barcos 
+          llenar lista de barcos
           i=0
           while  ()
               input barco de size coordenada , v u h
@@ -189,16 +189,16 @@ def atacar():
 def defender():
     print("Recibimos ataque")
     '''
-    socket listen 
+    socket listen
         check barcos
         estado si final mostrar
         llenar barco propio
         atacar
 printmapa(mapa)
 '''
-   
 
-    
+
+
 
 
 #levantar argumentos "ip_local" , "ip enemiga"
@@ -214,5 +214,3 @@ class barco
    coordenadas_averiadas[]
 
 '''
-
-
