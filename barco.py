@@ -13,12 +13,10 @@ class Barco:
         elif coordenada in self.coordenadas_tocadas:
             return 't'
         return 'a'
-    def print (self):
-        print("coord vivas  :",self.coordenadas_vivas)
-        print("coord tocadas:",self.coordenadas_tocadas)
+#    def print (self):
+#        print("coord vivas  :",self.coordenadas_vivas)
+#        print("coord tocadas:",self.coordenadas_tocadas)
     def is_hundido (self):
         if len(self.coordenadas_vivas)==0:
             return True
         return False
-        
-            
