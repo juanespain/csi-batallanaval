@@ -10,4 +10,4 @@ Cada jugador tiene una flota de 9 barcos de diferente tamaño, por lo que cada u
 2 Fragatas: ocupan 1 casilla.
 
 ## Prueba teletipo
-Teletipo es un programa que se usa para comunicarse entre varias personas que estan editando código a la vez.
+Teletipo es un programa que se usa para comunicarse entre varias personas que están editando código a la vez.
