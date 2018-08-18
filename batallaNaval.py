@@ -13,7 +13,7 @@ barcos_reglamento = [2]
 
 def recibir_ataque(coordenada):
     for barco in barcos:
-        resultado = absbarco.atacar()
+        resultado = absbarco.atacar() # acá me tira un error el debugger
         if resultado!= 'a':
             break
     todos_hundidos = True

@@ -11,11 +11,13 @@ def recibir_ataque(coordenada):
         resultado = 'w'
     return resultado
 
+
 def crear_mapa():
-    mapa={}
-    for x in range(ord('A'),ord('J')+1):
+    mapa = {}
+    for x in range(ord('A'), ord('J')+1):
         mapa[chr(x)] = ['×']*10
     return mapa
+
 
 def imprimir_mapa(mapa):
     print("   1  2  3  4  5  6  7  8  9  10")
