@@ -1,5 +1,5 @@
 # variables globales
-from enum import Enum
+from enum import Enum  # marcar que se la importa pero no se la usa
 
 port = 9950
 ip_local = "192.168.1.22"
@@ -13,8 +13,8 @@ barcos_reglamento = [2]
 
 def recibir_ataque(coordenada):
     for barco in barcos:
-        resultado = absbarco.atacar() # acá me tira un error el debugger
-        if resultado!= 'a':
+        resultado = absbarco.atacar()  # acá me tira un error el debugger
+        if resultado != 'a':
             break
     todos_hundidos = True
     for barco in barcos:
@@ -23,6 +23,7 @@ def recibir_ataque(coordenada):
     if todos_hundidos:
         resultado = 'w'
     return resultado
+
 
 class Barco:
     def __init__(self, coordenadas):
@@ -39,11 +40,13 @@ class Barco:
         elif coordenada in self.coordenadas_tocadas:
             return 't'
         return 'a'
+
     def print_barco(self):
         print("coord vivas  :", self.coordenadas_vivas)
         print("coord tocadas:", self.coordenadas_tocadas)
-    def is_hundido (self):
-        if len(self.coordenadas_vivas)==0:
+
+    def is_hundido(self):
+        if len(self.coordenadas_vivas) == 0:
             return True
         return False
 
@@ -57,8 +60,10 @@ class Resultado(Enum):
     ERROR =5
     '''
 
+
 def crearMapaVacio():
     pass
+
 
 '''
 por| ahora 10x10 luego variable
@@ -69,56 +74,57 @@ por| ahora 10x10 luego variable
 
 def imprimirMapas():
     print("Base")
-    imprimirMapas(mapa_propio);
+    imprimirMapas(mapa_propio)
     print("Enemigo")
     imprimirMapas(mapa_enemigo)
+
+
 def getInitPos(pos, size):
-    initNum =int(pos.split(",")[1])
+    initNum = int(pos.split(",")[1])
     initLetra = pos.split(",")[0]
     sentido = pos.split(",")[2]
     esVertical = sentido.upper() == 'V'
 
-    lista =[]
+    lista = []
     for i in range(size):
         if esVertical:
-                 lista += [(chr(ord(initLetra.upper + i)), initNum)]
+                lista += [(chr(ord(initLetra.upper + i)), initNum)]
         else:
-                 lista += [(initLetra, initNum+i)]
-
-
+                lista += [(initLetra, initNum+i)]
     print (lista)
     return lista
+
+
 def isValidaInitPos(pos):
     if pos.count(",") != 2:
         return False
-    letra=pos.split(",")[0]
+    letra = pos.split(",")[0]
     num = pos.split(",")[1]
     sentido = pos.split(",")[2]
     if sentido.upper() != 'H' and sentido.upper() != 'V':
         print ("sentido")
         return False
-    if ord(letra.lower()) < 97 or ord(letra.lower()) >117:
+    if ord(letra.lower()) < 97 or ord(letra.lower()) > 117:
         print ("letra")
         return False
-    if int(num) <1 or int(num)>10:
+    if int(num) < 1 or int(num) > 10:
         print ("nnumero")
         return False
     return True
 
+
 def setupBarcos():
     print ("Definiendo Barcos")
-    i=0
-    while  (True):
-        print("barco numero " ,i)
+    i = 0
+    while (True):
+        print("barco numero ", i)
         size = barcos_reglamento[i]
-        pos  = input("insertar un barco de " + str(size) + ". Ej b,2,h en la posicion b2 horizontal o vertical: ")
+        pos = input("insertar un barco de " + str(size) + ". Ej b,2,h en la posicion b2 horizontal o vertical: ")
         if isValidaInitPos(pos):
-            barcos.append(Barco(getInitPos(pos,size)))
-            i+=1
+            barcos.append(Barco(getInitPos(pos, size)))
+            i += 1
             if i >= len(barcos_reglamento):
                 break
-
-
 
 
 '''
@@ -166,8 +172,10 @@ def iniciar():
     print ("Iniciado")
     crearMapaVacio()
     setupBarcos()
-    #si mi ip es mas grande attacar else defender
+    # si mi ip es mas grande attacar else defender
     atacar()
+
+
 def atacar():
     '''
     input keyboard devuelve coordenada valida
@@ -186,6 +194,7 @@ def atacar():
     print ("Atacamos")
     defender()
 
+
 def defender():
     print("Recibimos ataque")
     '''
@@ -197,12 +206,10 @@ def defender():
 printmapa(mapa)
 '''
 
+# levantar argumentos "ip_local" , "ip enemiga"
+# tomar ip_local
 
 
-
-
-#levantar argumentos "ip_local" , "ip enemiga"
-#tomar ip_local
 print ("inicio")
 iniciar()
 
